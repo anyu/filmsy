@@ -3,11 +3,9 @@ package cmd
 import (
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -28,10 +26,6 @@ func movies(c *cobra.Command, args []string) {
 }
 
 func getMovies(year string) error {
-	err := godotenv.Load()
-	if err != nil {
-		log.Print("error loading from env file")
-	}
 	apiKey := os.Getenv("API_KEY")
 	requestURL := fmt.Sprintf(moviesByYearAPIURL, apiKey, year)
 
