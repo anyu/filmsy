@@ -1,9 +1,7 @@
 package main
 
-func main() {
-	sayHey()
-}
+import "github.com/anyu/filmsy/cmd"
 
-func sayHey() string {
-	return "hey"
+func main() {
+	cmd.Execute()
 }
